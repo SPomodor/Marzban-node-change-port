@@ -19,6 +19,14 @@ class XRayConfig(dict):
     def __init__(self, config: str, peer_ip: str):
         config = json.loads(config)
 
+        for inbound in config['inbounds']:
+            tag = inbound.get('tag', '').upper()
+            match = re.search(r'PORT\s+(\d+)', tag)
+            
+            if match:
+                inbound['port'] = int(match.group(1))
+                logger.info("Port was successfully replaced "+str(match.group(1)))
+
         self.api_host = XRAY_API_HOST
         self.api_port = XRAY_API_PORT
         self.ssl_cert = SSL_CERT_FILE
