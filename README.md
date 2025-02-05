@@ -67,11 +67,15 @@ Launching the node
 ```bash
 sudo docker compose up -d
 ```
-
+## Additionally
 To restart the node
 ```bash
 cd ~/Marzban-node
 docker compose down --remove-orphans; docker compose up -d
+```
+To view the docker logs
+```bash
+docker logs marzban-node-marzban-node-1 --details
 ```
 ## Manual install
 Read the setup guide here: https://gozargah.github.io/marzban/docs/marzban-node
