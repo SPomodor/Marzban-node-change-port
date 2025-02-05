@@ -1,5 +1,8 @@
 # Marzban-node
 
+In order for the port to automatically change to the desired one, you need to add "PORT your_port" at the end of your inbound tag, for example: "VLESS TCP REALITY PORT 443"
+⚠️ It is also very important to insert the port you specified in the "host settings" so that the port in the subscription is displayed correctly.
+
 ## Quick install
 Updating the server
 ```bash
@@ -13,7 +16,7 @@ sudo apt install socat -y && sudo apt install curl socat -y && sudo apt install 
 
 Cloning the repository
 ```bash
-git clone https://github.com/Gozargah/Marzban-node
+git clone https://github.com/SPomodor/Marzban-node-change-port Marzban-node
 ```
 
 We enter the working folder of the node
