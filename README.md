@@ -43,7 +43,7 @@ sudo nano docker-compose.yml
 ```
 services:
   marzban-node:
-    image: spmarzban-node:latest
+    image: spomodor/marzban-node:latest
     restart: always
     network_mode: host
 
@@ -53,6 +53,11 @@ services:
     environment:
       SSL_CLIENT_CERT_FILE: "/var/lib/marzban-node/ssl_client_cert.pem"
       SERVICE_PROTOCOL: rest
+```
+
+Building a docker
+```bash
+docker build -t spomodor/marzban-node:latest .
 ```
 
 Launching the node
